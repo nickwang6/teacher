@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>章老师教师节快乐</title>
+<script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+
+<style>
+ #code p:nth-child(odd) {
+	color:rgb(157,35,228);
+}
+#code p:nth-child(even) {
+	color:red;
+}
+#code p:nth-child(1) {
+	color:red;
+}
+#code p:nth-child(2) {
+	color:rgb(240,27,134);
+}
+#code p:nth-child(3) {
+	color:rgb(173,230,203);
+}
+#code p:nth-child(4) {
+	color:rgb(40,228,65);
+}
+body{
+    background: url("img/802.jpg")no-repeat;
+    background-size: cover ;
+
+}
+
+</style>
+</head>
+<body>
+
+<center>
+<div id="code">
+
+    <p>This is Teachers'Day</p>
+    <p>and a time to be grateful to all teachers</p>
+    <p>You have our eternal gratefulness</p>
+    <p>Happy Teachers's Day</p>
+    <p>在这特别的日子谨向您致以我们永恒的感激之情。</p>
+    <p>来自C190119班全体同学的祝福</p>
+</div>
+
+<script>
+$(function() {
+    typewriter("code");
+});
+
+function typewriter(id) {
+    var $ele = document.getElementById(id);
+    var str = $ele.innerHTML,
+        progress = 0;
+    $ele.innerHTML = '';
+    var timer = setInterval(function() {
+        var current = str.substr(progress, 1);
+        if (current == '<') {
+            progress = str.indexOf('>', progress) + 1;
+        } else {
+            progress++;
+        }
+        $ele.innerHTML = str.substring(0, progress) + (progress & 1 ? '_' : '');
+        if (progress >= str.length) {
+            clearInterval(timer);
+        }
+    }, 75);
+}
+</script>
+
+</body>
+</html>
